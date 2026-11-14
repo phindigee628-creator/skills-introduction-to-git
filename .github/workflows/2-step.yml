@@ -138,14 +138,13 @@ jobs:
           file: exercise-toolkit/markdown-templates/step-feedback/step-results-table.md
           vars: |
             step_number: 2
-            results_table:
+             results_table:
               - description: "Created initial commit"
                 passed: ${{ steps.check-for-initial-commit.outcome == 'success' }}
               - description: "Created game docs commit"
                 passed: ${{ steps.check-for-game-docs-commit.outcome == 'success' }}
               - description: "Created developer docs commit"
-                passed: ${{ steps.check-for-game-docs-commit.outcome == 'success' }}
-
+                passed: ${{ steps.check-for-developer-docs-commit.outcome == 'success' }}
       # END: Check practical exercise
 
       - name: Fail job if not all checks passed
