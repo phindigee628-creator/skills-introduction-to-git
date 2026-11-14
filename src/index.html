@@ -39,6 +39,7 @@
             <strong>↑</strong> Rotate<br />
             <strong>↓</strong> Soft Drop<br />
             <strong>Space</strong> Hard Drop<br />
+            let highScore = 0;
             <strong>P</strong> Pause
           </div>
         </div>
@@ -56,3 +57,7 @@
     <script src="index.js"></script>
   </body>
 </html>
+
+// Load high score from localStorage
+highScore = parseInt(localStorage.getItem("stackOverflownHighScore")) || 0;
+document.getElementById("high-score").textContent = highScore;
