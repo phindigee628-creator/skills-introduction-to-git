@@ -38,6 +38,7 @@ let currentPiece = null;
 let currentX = 0;
 let currentY = 0;
 let score = 0;
+let highScore = parseInt(localStorage.getItem("stackOverflownHighScore")) || 0;
 let gameOver = false;
 let isPaused = false;
 let dropCounter = 0;
@@ -51,6 +52,7 @@ function init() {
   ctx = canvas.getContext("2d");
   patternCanvas = document.getElementById("patternCanvas");
   patternCtx = patternCanvas.getContext("2d");
+  document.getElementById("high-score").textContent = highScore;
 
   // Initialize empty board
   board = Array(ROWS)
@@ -307,6 +309,13 @@ function clearPattern(startRow, startCol) {
 // Update score display
 function updateScore() {
   document.getElementById("score").textContent = score;
+
+  // Update high score if current score exceeds it
+  if (score > highScore) {
+    highScore = score;
+    document.getElementById("high-score").textContent = highScore;
+    localStorage.setItem("stackOverflownHighScore", highScore);
+  }
 }
 
 // Handle keyboard input
