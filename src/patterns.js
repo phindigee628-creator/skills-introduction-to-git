@@ -8,7 +8,7 @@ const ERROR_PATTERNS = [
     [0, 1, 1, 1, 0],
     [0, 0, 1, 0, 0],
     [0, 0, 1, 0, 0],
-  ],
+   ],
   },
   {
     name: "Memory Leak",
